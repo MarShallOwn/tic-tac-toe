@@ -12,8 +12,8 @@ import Main from './Main';
     <Router history={createBrowserHistory()}>
       <Switch>
         <Route exact path='/tic-tac-toe' component={Main}/>
-        <Route path='/bot' render={()=> <Header><Bot/></Header> } />
-        <Route path='/multiplayer' render={()=> <Header><Multiplayer/></Header> } />
+        <Route path='/tic-tac-toe/bot' render={()=> <Header><Bot/></Header> } />
+        <Route path='/tic-tac-toe/multiplayer' render={()=> <Header><Multiplayer/></Header> } />
       </Switch>
     </Router>,
     document.getElementById('root')

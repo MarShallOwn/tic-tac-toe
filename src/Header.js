@@ -15,8 +15,8 @@ const Header = ({children}) => {
         <div>
             <Link to='/tic-tac-toe'>Back Home</Link>
             <div style={{textAlign: "center"}}>
-                <h3 style={style}><Link to='/multiplayer'>Multiplayer</Link></h3>
-                <h3 style={style}><Link to='/bot'>Play Against Bot</Link></h3>
+                <h3 style={style}><Link to='/tic-tac-toe/multiplayer'>Multiplayer</Link></h3>
+                <h3 style={style}><Link to='/tic-tac-toe/bot'>Play Against Bot</Link></h3>
             </div>
             {children}
         </div>
