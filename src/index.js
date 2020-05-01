@@ -11,7 +11,7 @@ import Main from './Main';
   ReactDOM.render(
     <Router history={createBrowserHistory()}>
       <Switch>
-        <Route exact path='/' component={Main}/>
+        <Route exact path='/tic-tac-toe' component={Main}/>
         <Route path='/bot' render={()=> <Header><Bot/></Header> } />
         <Route path='/multiplayer' render={()=> <Header><Multiplayer/></Header> } />
       </Switch>
