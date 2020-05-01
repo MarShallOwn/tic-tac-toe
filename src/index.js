@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-
-ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+import Bot from './Bot';
+import Multiplayer from './Multiplayer';
+import {Router, Switch, Route} from 'react-router-dom';
+import {createBrowserHistory} from 'history';
+import Header from './Header';
+import Main from './Main';
+  
+  ReactDOM.render(
+    <Router history={createBrowserHistory()}>
+      <Switch>
+        <Route exact path='/' component={Main}/>
+        <Route path='/bot' render={()=> <Header><Bot/></Header> } />
+        <Route path='/multiplayer' render={()=> <Header><Multiplayer/></Header> } />
+      </Switch>
+    </Router>,
+    document.getElementById('root')
+  );
+  

@@ -1,13 +1,223 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ol, ul {
+  padding-left: 30px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 7vh;
+  font-weight: bold;
+  line-height: 34px;
+  height: 15vh;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 15vh;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 17vh;
+}
+
+
+.game-info {
+  margin-left: 20px;
+  font-size: 2.5vh;
+}
+
+button{
+  font-size: 2vh;
+}
+
+.link-box-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.link-box{
+  background-color: #acaeb3;
+  height: 40vh;
+  width: 10em;
+  border-radius: 20px;
+  margin: 5vh;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 4vh;
+  padding: 10px;
+  text-align: center;
+}
+
+.link-box:hover{
+  background-color: #82868d;
+}
+
+#multi.link-box{
+  background-color: #5bc0de;
+}
+
+#multi.link-box:hover{
+  background-color: #428bca;
+}
+
+.link-box-text{
+  text-decoration: none;
+  color: black;
+}
+
+.input-box{
+  text-align: center;
+  margin-top: 2em;
+  font-size: 1.5em;
+}
+
+.player1-input{
+  display: inline-block;
+  margin: 0 2em;
+}
+
+.player2-input{
+  margin: 1.5em 0;
+  display: inline-block;
+}
+
+.player1-input input{
+  display: block;
+  width: 100%;
+  margin-top: 1.5em;
+}
+
+.player2-input input{
+  display: block;
+  width: 100%;
+  margin-top: 1.5em;
+}
+
+.input-box div{
+  text-align: center;
+}
+
+.change_name{
+  margin-top: 5vh;
+}
+
+@media (max-device-width : 1024px) and (min-device-width: 600px){
+  .game{
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+  }
+  .game-info{
+    margin-top: 2em;
+    font-size: 2.6vh;
+  }
+
+  .game-board{
+    width: 100%;
+  }
+
+  button{
+    font-size: 2vh;
+  }
+
+  .square{
+    height: 11vh;
+    width: 11vh;
+  }
+
+  .link-box{
+    height: 25vh;
+    width: 25vh;
+  }
+
+}
+
+
+@media (max-device-width: 414px){
+
+  .game{
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+  }
+  .game-info{
+    margin-top: 2em;
+    font-size: 2.6vh;
+  }
+
+  .game-board{
+    width: 100%;
+  }
+
+  button{
+    font-size: 2vh;
+  }
+
+  .square{
+    height: 11vh;
+    width: 11vh;
+  }
+
+
+  .link-box{
+    height: 20vh;
+    width: 20vh;
+    margin: 0 50px;
+    margin: 0 10px;
+  }
+
+  .player1-input{
+    font-size: 1.5vh;
+  }
+  
+  .player2-input{
+    font-size: 1.5vh;
+  }
+
+  .player1-input input{
+    font-size: 1.5vh;
+    border-width:  1px;
+    border-style: solid;
+  }
+  
+  .player2-input input{
+    font-size: 1.5vh;
+    border-width:  1px;
+    border-style: solid;
+  }
+
+  .input-box button[type="submit"]{
+    font-size: 2.5em;
+  }
 }
