@@ -84,6 +84,7 @@ import React, {Component} from 'react';
           if(k===1){
             this.setState({
               winner: lines[i],
+              xIsNext: true
             });
           }
           
@@ -105,6 +106,7 @@ import React, {Component} from 'react';
 
       squares[i] = this.state.xIsNext ? "X" : "O";
 
+      if(this.state.stepNumber < 4){
       this.setState({
         xIsNext: !this.state.xIsNext,
       },() => {
@@ -122,7 +124,9 @@ import React, {Component} from 'react';
           break;
         }
       }
-    });     
+    }); 
+    
+  }
     
       this.setState({
         history: history.concat([
@@ -138,7 +142,7 @@ import React, {Component} from 'react';
     jumpTo = step => {
       this.setState({
         stepNumber: step,
-        xIsNext: (step % 2) === 0,
+        xIsNext: true,
       });
 
       if(step === this.state.history.length-1){
@@ -188,7 +192,7 @@ import React, {Component} from 'react';
       if(winner){
         status = 'Winner: '+ winner;
       }
-      else if(this.state.stepNumber === 9){
+      else if(this.state.stepNumber === 5){
         status = 'Draw';
       }
       else{
